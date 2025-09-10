@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hygie Helm Design System - Clean, Modern, Tech-Forward */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Base Colors - Clean & Modern */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+    
+    /* Brand Colors - Blue (Trust/Tech) */
+    --primary: 214 84% 56%;
+    --primary-light: 214 84% 70%;
+    --primary-dark: 214 84% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Fresh Light Green (Hygiene) */
+    --secondary: 142 76% 73%;
+    --secondary-light: 142 76% 85%;
+    --secondary-dark: 142 76% 61%;
+    --secondary-foreground: 215 25% 27%;
+    
+    /* Neutral Grays */
+    --muted: 215 16% 96%;
+    --muted-foreground: 215 13% 65%;
+    --muted-dark: 215 16% 47%;
+    
+    /* Interactive */
+    --accent: 214 84% 56%;
+    --accent-foreground: 0 0% 100%;
+    --border: 215 14% 89%;
+    --input: 215 14% 89%;
+    --ring: 214 84% 56%;
+    
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --surface-elevated: 215 16% 98%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    
+    /* States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 61%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 84% 56%), hsl(142 76% 73%));
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 56% / 0.1), hsl(142 76% 73% / 0.1));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(215 16% 98%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(215 25% 27% / 0.08);
+    --shadow-medium: 0 4px 16px -4px hsl(215 25% 27% / 0.12);
+    --shadow-large: 0 8px 32px -8px hsl(215 25% 27% / 0.16);
+    --shadow-brand: 0 4px 20px -4px hsl(214 84% 56% / 0.3);
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-4 rounded-lg font-semibold shadow-brand hover:shadow-large transform hover:scale-105 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+  
+  /* Card Styles */
+  .card-elevated {
+    @apply bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+  
+  .card-feature {
+    @apply bg-surface-elevated border border-border rounded-xl p-8 hover:border-primary/30 hover:shadow-medium transition-all duration-300;
+  }
+  
+  /* Process Step Cards */
+  .process-card {
+    @apply relative bg-card border border-border rounded-xl p-6 shadow-soft hover:shadow-brand hover:border-primary/30 transition-all duration-300 cursor-pointer;
+  }
+  
+  .process-number {
+    @apply absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center text-sm font-bold text-primary-foreground shadow-medium;
+  }
+  
+  /* Typography */
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-2xl mx-auto;
+  }
+  
+  /* Layout Utilities */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .stagger-delay-1 {
+    @apply delay-100;
+  }
+  
+  .stagger-delay-2 {
+    @apply delay-200;
+  }
+  
+  .stagger-delay-3 {
+    @apply delay-300;
+  }
+  
+  .stagger-delay-4 {
+    @apply delay-500;
+  }
+}
+
+@layer utilities {
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply backdrop-blur-sm bg-white/80 border border-white/20;
+  }
+  
+  /* Shadow Utilities */
+  .shadow-brand {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+}
